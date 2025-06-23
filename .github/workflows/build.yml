@@ -115,7 +115,7 @@ jobs:
         zip -r aseprite-windows.zip aseprite.exe
         echo "Packaged Windows build"
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: aseprite-${{ runner.os }}-${{ matrix.build_type }}-${{ matrix.ui }}-${{ matrix.scripting }}
         path: |
