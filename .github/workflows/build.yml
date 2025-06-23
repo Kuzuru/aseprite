@@ -109,10 +109,10 @@ jobs:
         $XVFB bash run-tests.sh
     - name: Package Windows Build
       if: runner.os == 'Windows'
-      shell: bash
+      shell: pwsh
       run: |
         cd build/bin
-        zip -r aseprite-windows.zip aseprite.exe
+        Compress-Archive -Path "aseprite.exe" -DestinationPath "aseprite-windows.zip"
         echo "Packaged Windows build"
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
